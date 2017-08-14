@@ -2,13 +2,13 @@ package model.entity.boquet.component;
 
 import model.entity.Item;
 
-public abstract class BouqeteComponent implements Item {
+public abstract class BouquetComponent implements Item {
 
     private String name;
 
     private int price;
 
-    public BouqeteComponent(String name, int price) {
+    public BouquetComponent(String name, int price) {
 	this.name = name;
 	this.price = price;
     }
