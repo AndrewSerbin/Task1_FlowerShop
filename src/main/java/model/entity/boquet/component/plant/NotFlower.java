@@ -1,8 +1,8 @@
 package model.entity.boquet.component.plant;
 
-import model.entity.boquet.component.BouqeteComponent;
+import model.entity.boquet.component.BouquetComponent;
 
-public class NotFlower extends BouqeteComponent {
+public class NotFlower extends BouquetComponent {
 
     private NotFlowerType type;
 
