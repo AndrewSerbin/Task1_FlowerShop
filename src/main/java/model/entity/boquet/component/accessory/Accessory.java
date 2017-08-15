@@ -1,8 +1,8 @@
 package model.entity.boquet.component.accessory;
 
-import model.entity.boquet.component.BouquetComponent;
+import model.entity.boquet.component.Component;
 
-public class Accessory extends BouquetComponent {
+public class Accessory extends Component {
 
     private AccessoryType type;
 

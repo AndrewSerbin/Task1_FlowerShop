@@ -13,6 +13,8 @@ import model.entity.boquet.exception.IncompleteBouquetInitialization;
 
 public class BouquetBuilder {
 
+    private String name;
+
     private Event event;
 
     private Freshness freshness;
@@ -28,6 +30,11 @@ public class BouquetBuilder {
     public BouquetBuilder() {
 	flowers = new ArrayList<>();
 	accessories = new ArrayList<>();
+    }
+
+    public BouquetBuilder setName(String name) {
+	this.name = name;
+	return this;
     }
 
     public BouquetBuilder setEvent(Event event) {
@@ -79,7 +86,7 @@ public class BouquetBuilder {
 	    throw new IncompleteBouquetInitialization();
 	}
 
-	Bouquet bouquet = new Bouquet();
+	Bouquet bouquet = new Bouquet(name);
 	bouquet.setAccessories(accessories);
 	bouquet.setEvent(event);
 	bouquet.setFlowers(flowers);

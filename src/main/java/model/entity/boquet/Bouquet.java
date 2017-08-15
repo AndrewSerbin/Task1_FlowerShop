@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.entity.Item;
 
-public class Bouquet implements Item {
+public class Bouquet extends Item {
 
     private Event event;
 
@@ -17,6 +17,10 @@ public class Bouquet implements Item {
     private List<Item> flowers;
 
     private List<Item> accessories;
+
+    public Bouquet(String name) {
+	super(name);
+    }
 
     @Override
     public int getPrice() {
