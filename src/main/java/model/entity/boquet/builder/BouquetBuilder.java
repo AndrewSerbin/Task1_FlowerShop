@@ -9,7 +9,6 @@ import model.entity.boquet.Event;
 import model.entity.boquet.Freshness;
 import model.entity.boquet.Size;
 import model.entity.boquet.StemLength;
-import model.entity.boquet.component.plant.Flower;
 import model.entity.boquet.exception.IncompleteBouquetInitialization;
 
 public class BouquetBuilder {
@@ -51,7 +50,7 @@ public class BouquetBuilder {
 	return this;
     }
 
-    public BouquetBuilder addFlower(Flower flower) {
+    public BouquetBuilder addFlower(Item flower) {
 	flowers.add(flower);
 	return this;
     }
