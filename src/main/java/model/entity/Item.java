@@ -1,6 +1,20 @@
 package model.entity;
 
-public interface Item {
+public abstract class Item {
 
-    int getPrice();
+    private String name;
+
+    public Item(String name) {
+	this.name = name;
+    }
+
+    public String getName() {
+	return name;
+    }
+
+    public void setName(String name) {
+	this.name = name;
+    }
+
+    abstract public int getPrice();
 }
