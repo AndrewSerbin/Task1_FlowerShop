@@ -4,7 +4,7 @@ import model.entity.Item;
 
 public abstract class Component extends Item {
 
-    private int price;
+    protected int price;
 
     public Component(String name, int price) {
 	super(name);
