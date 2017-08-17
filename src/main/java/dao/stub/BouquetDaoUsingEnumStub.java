@@ -1,8 +1,9 @@
-package dao;
+package dao.stub;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.BouquetDao;
 import dao.exception.StorageSystemException;
 import model.entity.boquet.Bouquet;
 
@@ -14,10 +15,5 @@ public class BouquetDaoUsingEnumStub implements BouquetDao {
 	bouquets.add(BouquetStub.BOUQUET_1.getBouquet());
 	bouquets.add(BouquetStub.BOUQUET_2.getBouquet());
 	return bouquets;
-    }
-
-    @Override
-    public void deleteById(int id) throws StorageSystemException {
-	throw new UnsupportedOperationException();
     }
 }
