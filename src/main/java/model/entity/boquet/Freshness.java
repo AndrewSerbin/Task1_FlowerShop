@@ -1,5 +1,5 @@
 package model.entity.boquet;
 
 public enum Freshness {
-    VERY_FRESH, NORMALLY, BAD, WITHERED
+    WITHERED, BAD, NORMALLY, VERY_FRESH
 }

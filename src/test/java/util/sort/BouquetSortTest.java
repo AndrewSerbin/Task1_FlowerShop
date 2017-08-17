@@ -15,15 +15,15 @@ public class BouquetSortTest {
     @Test
     public void testBouquetsSortWithStemLength() {
 	List<Bouquet> actualBouquets = new ArrayList<>();
-	actualBouquets.add(BouquetStub.BOUQUET_2.getBouquet());
 	actualBouquets.add(BouquetStub.BOUQUET_1.getBouquet());
+	actualBouquets.add(BouquetStub.BOUQUET_2.getBouquet());
 
 	List<Bouquet> expectedBouquets = new ArrayList<>();
-	expectedBouquets.add(BouquetStub.BOUQUET_1.getBouquet());
 	expectedBouquets.add(BouquetStub.BOUQUET_2.getBouquet());
+	expectedBouquets.add(BouquetStub.BOUQUET_1.getBouquet());
 
 	Sortable<Bouquet> sort = new BouquetSort();
-	sort.sort(actualBouquets, new StemLengthComparator());
+	sort.sort(actualBouquets, new FreshnessComparator());
 
 	assertEquals(expectedBouquets, actualBouquets);
     }
