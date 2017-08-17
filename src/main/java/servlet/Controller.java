@@ -8,13 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/result")
-public class Result extends HttpServlet {
+@WebServlet("/home")
+public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
-    public Result() {
-	super();
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,4 +21,5 @@ public class Result extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	doGet(request, response);
     }
+
 }
