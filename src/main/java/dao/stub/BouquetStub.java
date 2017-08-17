@@ -1,4 +1,4 @@
-package dao;
+package dao.stub;
 
 import model.entity.boquet.Bouquet;
 import model.entity.boquet.Event;
