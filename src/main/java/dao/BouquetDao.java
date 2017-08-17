@@ -5,7 +5,7 @@ import java.util.List;
 import dao.exception.StorageSystemException;
 import model.entity.boquet.Bouquet;
 
-public interface BoquetDao {
+public interface BouquetDao {
 
     List<Bouquet> getAll() throws StorageSystemException;
 

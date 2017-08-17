@@ -6,12 +6,13 @@ import java.util.List;
 import dao.exception.StorageSystemException;
 import model.entity.boquet.Bouquet;
 
-public class BoquetEnumStub implements BoquetDao {
+public class BouquetDaoUsingEnumStub implements BouquetDao {
 
     @Override
     public List<Bouquet> getAll() throws StorageSystemException {
 	List<Bouquet> bouquets = new ArrayList<>();
-	bouquets.add(BoquetExample.BOUQUET_1.getBouquet());
+	bouquets.add(BouquetStub.BOUQUET_1.getBouquet());
+	bouquets.add(BouquetStub.BOUQUET_2.getBouquet());
 	return bouquets;
     }
 

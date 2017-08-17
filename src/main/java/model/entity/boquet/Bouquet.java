@@ -84,4 +84,9 @@ public class Bouquet extends Item {
     public void setAccessories(List<Item> accessories) {
 	this.accessories = accessories;
     }
+
+    @Override
+    public String toString() {
+	return "Bouquet [event=" + event + ", freshness=" + freshness + ", size=" + size + ", stemLength=" + stemLength + ", flowers=" + flowers + ", accessories=" + accessories + "]";
+    }
 }
