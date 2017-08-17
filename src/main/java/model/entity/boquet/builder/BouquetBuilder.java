@@ -82,9 +82,9 @@ public class BouquetBuilder {
 		|| checkSizeForNull() || checkStemLengthForNull()
 		|| checkFlowersForNull() || checkFlowersForZeroCapacity();
 
-	if (incompleteBouquetInitialization) {
-	    throw new IncompleteBouquetInitialization();
-	}
+	// if (incompleteBouquetInitialization) {
+	// throw new IncompleteBouquetInitialization();
+	// }
 
 	Bouquet bouquet = new Bouquet(name);
 	bouquet.setAccessories(accessories);
