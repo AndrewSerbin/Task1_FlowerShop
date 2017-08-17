@@ -9,11 +9,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import dao.BouquetDao;
-import dao.BouquetDaoUsingEnumStub;
-import dao.BouquetStub;
 import dao.exception.StorageSystemException;
+import dao.stub.BouquetDaoUsingEnumStub;
+import dao.stub.BouquetStub;
 import model.entity.boquet.Bouquet;
 import model.entity.boquet.StemLength;
+import model.entity.boquet.exception.IncompleteBouquetInitialization;
 
 public class BouquetFindTest {
 
@@ -25,6 +26,8 @@ public class BouquetFindTest {
 	try {
 	    bouquets = dao.getAll();
 	} catch (StorageSystemException e) {
+	    e.printStackTrace();
+	} catch (IncompleteBouquetInitialization e) {
 	    e.printStackTrace();
 	}
     }

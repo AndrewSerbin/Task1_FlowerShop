@@ -6,8 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import dao.BouquetDao;
-import dao.BouquetDaoUsingEnumStub;
 import dao.exception.StorageSystemException;
+import dao.stub.BouquetDaoUsingEnumStub;
+import model.entity.boquet.exception.IncompleteBouquetInitialization;
 
 public class BouquetTest {
 
@@ -19,6 +20,8 @@ public class BouquetTest {
 	try {
 	    boquet = dao.getAll().get(0);
 	} catch (StorageSystemException e) {
+	    e.printStackTrace();
+	} catch (IncompleteBouquetInitialization e) {
 	    e.printStackTrace();
 	}
     }

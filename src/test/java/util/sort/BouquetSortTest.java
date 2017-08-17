@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import dao.BouquetStub;
+import dao.stub.BouquetStub;
 import model.entity.boquet.Bouquet;
 
 public class BouquetSortTest {
