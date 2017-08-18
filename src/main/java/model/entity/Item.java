@@ -17,4 +17,9 @@ public abstract class Item {
     }
 
     abstract public int getPrice();
+
+    @Override
+    public String toString() {
+	return "Item [name=" + name + "]";
+    }
 }

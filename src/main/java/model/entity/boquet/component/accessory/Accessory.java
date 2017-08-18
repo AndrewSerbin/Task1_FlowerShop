@@ -9,5 +9,11 @@ public class Accessory extends Component {
     public Accessory(String name, int price, AccessoryType type) {
 	super(name, price);
 	this.type = type;
+
+    }
+
+    @Override
+    public String toString() {
+	return super.toString() + "Accessory [type=" + type + "]";
     }
 }

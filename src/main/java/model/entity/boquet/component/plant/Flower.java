@@ -17,6 +17,11 @@ public class Flower extends Component {
 	this.isSupport = needSupport;
     }
 
+    public Flower(String name, int price, FlowerType type) {
+	super(name, price);
+	this.type = type;
+    }
+
     public FlowerType getType() {
 	return type;
     }
@@ -39,5 +44,10 @@ public class Flower extends Component {
 
     public void setSupport(boolean needSupport) {
 	this.isSupport = needSupport;
+    }
+
+    @Override
+    public String toString() {
+	return super.toString() + "Flower [type=" + type + ", isFeed=" + isFeed + ", isSupport=" + isSupport + "]";
     }
 }

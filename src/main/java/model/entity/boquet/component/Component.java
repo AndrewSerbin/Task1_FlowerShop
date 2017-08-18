@@ -19,4 +19,9 @@ public abstract class Component extends Item {
     public void setPrice(int price) {
 	this.price = price;
     }
+
+    @Override
+    public String toString() {
+	return super.toString() + "Component [price=" + price + "]";
+    }
 }
