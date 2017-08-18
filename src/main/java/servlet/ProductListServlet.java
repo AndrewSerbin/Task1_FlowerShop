@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.BouquetDao;
 import dao.exception.StorageSystemException;
@@ -24,20 +24,19 @@ public class ProductListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	BouquetDao dao = new BouquetDaoUsingMySqlJdbc();
-	List<Bouquet> items = new ArrayList<>();
+	List<Bouquet> bouquets = new ArrayList<>();
 	try {
-	    items = dao.getAll();
+	    bouquets = dao.getAll();
 	} catch (StorageSystemException e) {
 	    e.printStackTrace();
 	} catch (IncompleteBouquetInitialization e) {
 	    e.printStackTrace();
 	}
 
-	PrintWriter out = response.getWriter();
-	for (Bouquet bouquet : items) {
-	    out.println(bouquet);
-	}
-	out.close();
+	HttpSession session = request.getSession();
+	session.setAttribute("bouquets", bouquets);
+
+	redirect(request, response);
     }
 
     @Override
@@ -45,4 +44,9 @@ public class ProductListServlet extends HttpServlet {
 	doGet(request, response);
     }
 
+    private void redirect(HttpServletRequest request, HttpServletResponse response)
+	    throws ServletException, IOException {
+
+	this.getServletContext().getRequestDispatcher("/WEB-INF/product_list.jsp").forward(request, response);
+    }
 }
