@@ -17,7 +17,7 @@ import dao.mysql.BouquetDaoUsingMySqlJdbc;
 import model.entity.boquet.Bouquet;
 import model.entity.boquet.exception.IncompleteBouquetInitialization;
 
-@WebServlet("/productList")
+@WebServlet("/ProductList")
 public class ProductListServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
