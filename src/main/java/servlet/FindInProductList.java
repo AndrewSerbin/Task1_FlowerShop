@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.entity.boquet.Bouquet;
 import model.entity.boquet.StemLength;
-import util.find.BouquetFind;
+import model.util.find.BouquetFind;
 
 @WebServlet("/FindInProductList")
 public class FindInProductList extends HttpServlet {

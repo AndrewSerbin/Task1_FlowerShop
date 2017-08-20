@@ -9,6 +9,9 @@ import org.junit.Test;
 
 import dao.stub.BouquetStub;
 import model.entity.boquet.Bouquet;
+import model.util.sort.BouquetSort;
+import model.util.sort.FreshnessComparator;
+import model.util.sort.Sortable;
 
 public class BouquetSortTest {
 

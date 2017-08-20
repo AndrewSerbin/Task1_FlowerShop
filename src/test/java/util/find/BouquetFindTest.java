@@ -16,6 +16,8 @@ import dao.stub.BouquetStub;
 import model.entity.boquet.Bouquet;
 import model.entity.boquet.StemLength;
 import model.entity.boquet.exception.IncompleteBouquetInitialization;
+import model.util.find.BouquetFind;
+import model.util.find.Findable;
 
 public class BouquetFindTest {
 

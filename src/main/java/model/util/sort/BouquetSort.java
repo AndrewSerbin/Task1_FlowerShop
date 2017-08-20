@@ -1,4 +1,4 @@
-package util.sort;
+package model.util.sort;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,4 +1,4 @@
-package util.find;
+package model.util.find;
 
 import java.util.ArrayList;
 import java.util.List;

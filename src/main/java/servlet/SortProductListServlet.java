@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.entity.boquet.Bouquet;
-import util.sort.BouquetSort;
-import util.sort.FreshnessComparator;
+import model.util.sort.BouquetSort;
+import model.util.sort.FreshnessComparator;
 
 @WebServlet("/SortProductList")
 public class SortProductListServlet extends HttpServlet {
