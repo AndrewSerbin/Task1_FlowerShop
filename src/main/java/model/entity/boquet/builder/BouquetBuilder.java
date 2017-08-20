@@ -78,14 +78,13 @@ public class BouquetBuilder {
     }
 
     public Bouquet build() throws IncompleteBouquetInitialization {
-	// boolean incompleteBouquetInitialization = checkEventForNull() ||
-	// checkFreshnessForNull()
-	// || checkSizeForNull() || checkStemLengthForNull()
-	// || checkFlowersForNull() || checkFlowersForZeroCapacity();
-	//
-	// if (incompleteBouquetInitialization) {
-	// throw new IncompleteBouquetInitialization();
-	// }
+	boolean incompleteBouquetInitialization = checkEventForNull() || checkFreshnessForNull()
+		|| checkSizeForNull() || checkStemLengthForNull()
+		|| checkFlowersForNull() || checkFlowersForZeroCapacity();
+
+	if (incompleteBouquetInitialization) {
+	    throw new IncompleteBouquetInitialization();
+	}
 
 	Bouquet bouquet = new Bouquet(name);
 	bouquet.setAccessories(accessories);
