@@ -25,8 +25,8 @@ public class FindInProductList extends HttpServlet {
 	List<Bouquet> bouquets = (List<Bouquet>) session.getAttribute("bouquets");
 	BouquetFind bouquetFind = new BouquetFind();
 	List<Bouquet> result = bouquetFind.find(bouquets, StemLength.valueOf(request.getParameter("StemLength")));
-
 	session.setAttribute("bouquets", result);
+
 	redirect(request, response);
     }
 
