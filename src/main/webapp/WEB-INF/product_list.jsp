@@ -11,6 +11,21 @@
 <title>Product list</title>
 </head>
 <body>
+	<form method="POST" action="SortProductList" >
+		<input input type="submit" name="sort" value="Отсортировать">
+	</form>
+	<form method="POST" action="FindInProductList" >
+		<p>
+			<select size="3" multiple name="StemLength">
+    			<option disabled>Выберите длину стебля</option>
+    			<option selected value="WITHOUT">Без</option>
+    			<option value="SHORT">Короткий</option>
+    			<option value="MEDIUM">Средний</option>
+    			<option value="LONG">Длинный</option>
+   			</select>
+   		</p>
+   		<p><input input type="submit" name="find" value="Найти"></p>
+	</form>
 	<%
 	    List<Bouquet> bouquets = (List<Bouquet>) session.getAttribute("bouquets");
 	%>
