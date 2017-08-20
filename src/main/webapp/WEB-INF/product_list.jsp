@@ -14,11 +14,12 @@
 	<%
 	    List<Bouquet> bouquets = (List<Bouquet>) session.getAttribute("bouquets");
 	%>
-	<%
-	    for (Bouquet bouquet : bouquets) {
-	%>
 	<table>
+		<%
+		    for (Bouquet bouquet : bouquets) {
+		%>
 		<tr>
+			<td>Bouquet: </td>
 			<td><%=bouquet.getName()%></td>
 			<td><%=bouquet.getPrice()%></td>
 			<td><%=bouquet.getEvent()%></td>
@@ -29,34 +30,36 @@
 				<%
 				    for (Item item : bouquet.getFlowers()) {
 				%>
-				<table>
+			
 					<tr>
+						<td>Flower: </td>
 						<td><%=item.getName()%></td>
 						<td><%=item.getPrice()%></td>
 					</tr>
-				</table> 
+			
 				<%
-   				  }
+     				}
  				%>
 			</td>
 			<td>
 				<%
 				    for (Item item : bouquet.getAccessories()) {
 				%>
-				<table>
+				
 					<tr>
+						<td>Accessory: </td>
 						<td><%=item.getName()%></td>
 						<td><%=item.getPrice()%></td>
 					</tr>
-				</table> 
+				
 				<%
-   				  }
+     				}
  				%>
 			</td>
 		</tr>
-	</table>
 	<%
 	    }
 	%>
+	</table>
 </body>
 </html>
