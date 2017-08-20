@@ -2,8 +2,9 @@ package util.find;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -34,18 +35,18 @@ public class BouquetFindTest {
 
     @Test
     public void testFindWithStemLengthCriteria() {
-	Optional<Bouquet> expectedBouquet = Optional.of(BouquetStub.BOUQUET_2.getBouquet());
+	List<Bouquet> expectedBouquet = Arrays.asList(BouquetStub.BOUQUET_2.getBouquet());
 	Findable<Bouquet, StemLength> findable = new BouquetFind();
-	Optional<Bouquet> actualBouquet = findable.find(bouquets, StemLength.LONG);
+	List<Bouquet> actualBouquet = findable.find(bouquets, StemLength.LONG);
 
 	assertEquals(expectedBouquet, actualBouquet);
     }
 
     @Test
     public void testFindWithMissingStemLengthCriteria() {
-	Optional<Bouquet> expectedBouquet = Optional.empty();
+	List<Bouquet> expectedBouquet = new ArrayList<>();
 	Findable<Bouquet, StemLength> findable = new BouquetFind();
-	Optional<Bouquet> actualBouquet = findable.find(bouquets, StemLength.WITHOUT);
+	List<Bouquet> actualBouquet = findable.find(bouquets, StemLength.WITHOUT);
 
 	assertEquals(expectedBouquet, actualBouquet);
     }
