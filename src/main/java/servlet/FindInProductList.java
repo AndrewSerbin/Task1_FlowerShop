@@ -22,10 +22,10 @@ public class FindInProductList extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	HttpSession session = request.getSession();
 
-	List<Bouquet> bouquets = (List<Bouquet>) session.getAttribute("bouquets");
+	List<Bouquet> bouquets = (List<Bouquet>) session.getAttribute("items");
 	BouquetFind bouquetFind = new BouquetFind();
 	List<Bouquet> result = bouquetFind.find(bouquets, StemLength.valueOf(request.getParameter("StemLength")));
-	session.setAttribute("bouquets", result);
+	session.setAttribute("items", result);
 
 	redirect(request, response);
     }

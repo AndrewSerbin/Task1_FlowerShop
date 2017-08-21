@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import dao.BouquetDao;
 import dao.exception.StorageSystemException;
 import dao.mysql.BouquetDaoUsingMySqlJdbc;
-import model.entity.boquet.Bouquet;
+import model.entity.Item;
 import model.entity.boquet.exception.IncompleteBouquetInitialization;
 
 @WebServlet("/ProductList")
@@ -24,9 +24,9 @@ public class ProductListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	BouquetDao dao = new BouquetDaoUsingMySqlJdbc();
-	List<Bouquet> bouquets = new ArrayList<>();
+	List<Item> items = new ArrayList<>();
 	try {
-	    bouquets = dao.getAll();
+	    items.addAll(dao.getAll());
 	} catch (StorageSystemException e) {
 	    e.printStackTrace();
 	} catch (IncompleteBouquetInitialization e) {
@@ -34,7 +34,7 @@ public class ProductListServlet extends HttpServlet {
 	}
 
 	HttpSession session = request.getSession();
-	session.setAttribute("bouquets", bouquets);
+	session.setAttribute("items", items);
 
 	redirect(request, response);
     }

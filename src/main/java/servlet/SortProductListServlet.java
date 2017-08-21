@@ -22,11 +22,11 @@ public class SortProductListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	HttpSession session = request.getSession();
 
-	List<Bouquet> bouquets = (List<Bouquet>) session.getAttribute("bouquets");
+	List<Bouquet> bouquets = (List<Bouquet>) session.getAttribute("items");
 	BouquetSort bouquetSort = new BouquetSort();
 	bouquetSort.sort(bouquets, new FreshnessComparator());
 
-	session.setAttribute("bouquets", bouquets);
+	session.setAttribute("items", bouquets);
 	redirect(request, response);
     }
 
